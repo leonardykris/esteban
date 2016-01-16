@@ -1,0 +1,39 @@
+@import 'variables';
+@import 'hacks';
+@import 'responsive';
+@import 'betterwebsite';
+@import 'buttons';
+@import 'navbar';
+@import 'content';
+
+body {
+  background-color: $background-grey;
+
+  // Readability
+  color: $mountain-mist;
+  font-family: "Helvetica Neue", Helvetica, "Open Sans";
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+ol, ul {
+  list-style: none;
+  -webkit-padding-start: 0px;
+}
+
+footer {
+  background-color: $white;
+  padding: 42px 0px;
+}
+
+.legal {
+  padding-top: 30px;
+  color: #999;
+}
+
+.section-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  color: $mountain-mist;
+}

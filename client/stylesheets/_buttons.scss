@@ -1,0 +1,26 @@
+.btn-primary {
+  // background-color: $light_blue;
+  border-radius: 0px;
+  border: 0px;
+  color: white;
+
+  &:hover, &:active, &:focus {
+    // background-color: $green_darker;
+    color: $white;
+  }
+}
+.btn-default {
+  border-radius: 0px !important;
+
+  &:hover, &:active, &:focus {
+    background-color: $green !important;
+    color: $white;
+    border: 1px solid $green !important;
+  }
+}
+
+.btn-register {
+  margin-top: 24px;
+  width: 100%;
+  background-color: $primary;
+}

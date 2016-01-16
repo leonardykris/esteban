@@ -1,0 +1,37 @@
+.alt {
+  color: $light_blue;
+}
+.white {
+  color: $white;
+  margin-top: 0px;
+}
+.margin-bottom-10 {
+  margin-bottom: 6px;
+}
+.margin-left-10 {
+  margin-left: 10px;
+}
+.text-larger {
+  font-size: 110%;
+}
+.text-largest {
+  font-size: 125%;
+}
+.bold {
+  // font-family: "Raleway";
+  font-weight: 700;
+}
+.pointer {
+  cursor: pointer;
+}
+.green {
+  color: $green;
+}
+.sourceEmployer, .sourceDeposit {
+  @extend .white;
+}
+
+.background-green {
+  background-color: $green;
+  color: $white;
+}
