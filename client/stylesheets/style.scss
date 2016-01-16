@@ -7,11 +7,11 @@
 @import 'content';
 
 body {
-  background-color: $background-grey;
+  background-color: $bg-grey;
 
   // Readability
   color: $mountain-mist;
-  font-family: "Helvetica Neue", Helvetica, "Open Sans";
+  font-family: "Lora", Georgia, serif;
   -webkit-font-smoothing: antialiased;
   text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
@@ -24,6 +24,7 @@ ol, ul {
 footer {
   background-color: $white;
   padding: 42px 0px;
+  font-family: $sans-serif;
 }
 
 .legal {
@@ -36,4 +37,44 @@ footer {
   text-transform: uppercase;
   font-family: "Raleway";
   color: $mountain-mist;
+}
+
+.engagements {
+  margin: 60px 0px;
+
+  .panel-body {
+    .title {
+      color: $white;
+      font-family: $sans-serif;
+    }
+    p {
+      color: $white;
+    }
+  }
+}
+
+.title {
+  font-family: $sans-serif;
+}
+
+.partners {
+  margin: 60px 0px;
+}
+
+.first-landing-container {
+  padding-top: 20px;
+}
+
+.top-container {
+  padding-top: 60px;
+}
+
+p {
+  margin-bottom: 30px;
+  line-height: 1.9;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans-serif;
 }

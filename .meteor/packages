@@ -31,3 +31,6 @@ zimme:active-route
 fourseven:scss
 kadira:flow-router
 fortawesome:fontawesome
+kadira:blaze-layout
+useraccounts:bootstrap
+aldeed:template-extension

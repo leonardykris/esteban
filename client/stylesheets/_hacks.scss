@@ -1,15 +1,23 @@
-.alt {
-  color: $light_blue;
+.primary {
+  color: $primary;
 }
 .white {
   color: $white;
-  margin-top: 0px;
 }
 .margin-bottom-10 {
   margin-bottom: 6px;
 }
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
 .margin-left-10 {
   margin-left: 10px;
+}
+.margin-top-0 {
+  margin-top: 0px;
+}
+.padding-right-20 {
+  padding-right: 20px;
 }
 .text-larger {
   font-size: 110%;
@@ -34,4 +42,17 @@
 .background-green {
   background-color: $green;
   color: $white;
+}
+
+.bg-white {
+  background-color: $white;
+}
+.bg-primary {
+  background-color: $primary;
+}
+.bg-grey {
+  background-color: $bg-grey;
+}
+.lora {
+  font-family: "Lora", Georgia, serif;
 }
