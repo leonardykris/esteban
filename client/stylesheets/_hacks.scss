@@ -4,6 +4,9 @@
 .white {
   color: $white;
 }
+.crimson {
+  color: $crimson;
+}
 .margin-bottom-10 {
   margin-bottom: 6px;
 }
@@ -58,6 +61,16 @@
 }
 .bg-dark-brown {
   background-color: $dark_brown;
+}
+.bg-light-red {
+  background-color: $light-red;
+}
+.bg-green {
+  background-color: $green;
+}
+.outline-crimson {
+  border: 2px solid $crimson;
+  background-color: transparent;
 }
 .lora {
   font-family: "Lora", Georgia, serif;

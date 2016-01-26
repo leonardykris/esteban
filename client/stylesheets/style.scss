@@ -7,7 +7,7 @@
 @import 'content';
 
 body {
-  background-color: $bg-grey;
+  background-color: $white;
 
   // Readability
   color: $mountain-mist;
@@ -62,7 +62,7 @@ footer {
 }
 
 .first-landing-container {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .top-container {
@@ -71,8 +71,8 @@ footer {
 
 p {
   margin-bottom: 30px;
-  line-height: 1.9;
-  font-size: 16px;
+  line-height: 2;
+  font-size: 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {

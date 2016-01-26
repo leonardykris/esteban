@@ -1,9 +1,25 @@
+.page-heading {
+  padding-bottom: 13px;
+  padding-top: 23px;
+  background-color: #eaeaea;
+
+  h1 {
+    font-family: $serif;
+    font-size: 28px;
+    margin-top: 0px;
+    margin-bottom: 9px;
+  }
+}
 .content {
   // margin-left: 70px;
   // margin-right: 70px;
   // padding-left: 0px;
   // padding-right: 0px;
   padding-bottom: 80px;
+
+  .img {
+    margin-bottom: 20px;
+  }
 
   .section-title {
     margin-top: 40px;
@@ -16,7 +32,8 @@
   .panel {
     border: 0px;
     border-radius: 0px;
-    padding: 20px 25px;
+    padding: 25px;
+    box-shadow: none;
 
     &.panel-small {
       padding: 5px 25px;
@@ -26,10 +43,16 @@
     }
 
     .panel-body {
+      padding: 0px;
+
       .title {
         margin-top: 0px;
         // margin-bottom: 3px;
         // color: $mountain-mist;
+      }
+      li {
+        font-size: 15px;
+        line-height: 2;
       }
       p {
         // color: $mountain-mist;
