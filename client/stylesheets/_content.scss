@@ -3,11 +3,25 @@
   padding-top: 23px;
   background-color: #eaeaea;
 
+  small {
+    color: #888;
+  }
+
   h1 {
     font-family: $serif;
     font-size: 28px;
     margin-top: 0px;
     margin-bottom: 9px;
+  }
+  .section-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    // font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: $serif;
+    letter-spacing: 1px;
+    // color: $mountain-mist;
   }
 }
 .content {
