@@ -5,6 +5,7 @@ Template.login.events({
     var password = $('[name=password]').val();
     Meteor.loginWithPassword(email, password, function(error){
       if (error) {
+        // Accounts.onLoginFailure()
         // switch (error) {
         //   case 403:
         //     alert("Sorry, there's no existing record of that user.");
@@ -13,7 +14,8 @@ Template.login.events({
         console.log(error);
         alert(error.reason);
       } else {
-        FlowRouter.go("/");
+        // Accounts.onLogin()
+        FlowRouter.go("generalForm");
       }
     });
   }

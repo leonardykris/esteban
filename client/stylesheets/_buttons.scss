@@ -1,40 +1,67 @@
 .btn {
   font-family: $sans-serif;
+  border-radius: 0px;
+  width: 100%;
+  margin-bottom: 16px;
 }
 
 .btn-primary {
-  // background-color: $light_blue;
-  border-radius: 0px;
-  // border: 0px;
+  background-color: $crimson;
+  border: 2px solid $crimson;
   color: white;
 
   &:hover, &:active, &:focus {
-    // background-color: $green_darker;
+    background-color: $crimson-darker;
+    border: 2px solid $crimson-darker;
+    color: $white;
+
+    &:visited {
+      background-color: $crimson-darker;
+      border: 2px solid $crimson-darker;
+    }
+  }
+  &:visited {
+    background-color: $crimson;
+    border: 2px solid $crimson;
     color: $white;
   }
 }
-.btn-default {
-  border-radius: 0px !important;
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid $crimson;
+  color: $crimson;
 
   &:hover, &:active, &:focus {
-    background-color: $green !important;
+    background-color: $crimson-darker;
+    border: 2px solid $crimson-darker;
     color: $white;
-    border: 1px solid $green !important;
+
+    &:visited {
+      color: $white;
+    }
+  }
+  &:visited {
+    background-color: transparent;
+    color: $crimson;
   }
 }
 
-.btn-cta {
-  // margin-top: 24px;
-  width: 100%;
-  margin-bottom: 16px;
-  // background-color: $primary;
-}
+// .btn-default {
+//   border-radius: 0px !important;
 
-.btn-white {
-  // margin-top: 24px;
-  width: 100%;
-  background-color: $white;
-  color: $primary;
-  border-radius: 0px;
-  border: 0px;
-}
+//   &:hover, &:active, &:focus {
+//     background-color: $green !important;
+//     color: $white;
+//     border: 1px solid $green !important;
+//   }
+// }
+
+// .btn-white {
+//   // margin-top: 24px;
+//   width: 100%;
+//   background-color: $white;
+//   color: $primary;
+//   border-radius: 0px;
+//   border: 0px;
+// }
