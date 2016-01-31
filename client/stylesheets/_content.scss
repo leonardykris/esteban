@@ -1,7 +1,11 @@
+.title {
+  margin-top: 0px;
+}
+
 .page-heading {
-  padding-bottom: 13px;
+  padding-bottom: 23px;
   padding-top: 23px;
-  background-color: #eaeaea;
+  background-color: $cal-grey;
 
   small {
     color: #888;
@@ -11,7 +15,7 @@
     font-family: $serif;
     font-size: 28px;
     margin-top: 0px;
-    margin-bottom: 9px;
+    margin-bottom: 0px;
   }
   .section-title {
     margin-top: 20px;
