@@ -21,7 +21,7 @@ Template.register.events({
       if (error) {
         alert(error.reason);
       } else {
-        FlowRouter.go("/");
+        FlowRouter.go("login");
       }
     });
 
