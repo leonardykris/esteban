@@ -8,7 +8,11 @@
           <li><a href="about">Resources</a></li>
           <li><a href="login">CALI Press</a></li>
           <li><a href="login">Contact Us</a></li>
-          <li><a href="login">Register / Login</a></li>
+          {{#if currentUser}}
+            <li><a href="" class="logout">Sign Out</a></li>
+          {{else}}
+            <li><a href="login">Sign In</a></li>
+          {{/if}}
         </ul>
       </div>
     </div>

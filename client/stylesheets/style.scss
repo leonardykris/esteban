@@ -7,7 +7,7 @@
 @import 'content';
 
 body {
-  background-color: $bg-grey;
+  background-color: $white;
 
   // Readability
   color: $mountain-mist;
@@ -32,12 +32,12 @@ footer {
   color: #999;
 }
 
-.section-title {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-family: "Raleway";
-  color: $mountain-mist;
-}
+// .section-title {
+//   font-weight: 600;
+//   text-transform: uppercase;
+//   font-family: "Raleway";
+//   color: $mountain-mist;
+// }
 
 .engagements {
   margin: 60px 0px;
@@ -62,7 +62,7 @@ footer {
 }
 
 .first-landing-container {
-  padding-top: 20px;
+  padding-top: 40px;
 }
 
 .top-container {
@@ -70,11 +70,16 @@ footer {
 }
 
 p {
-  margin-bottom: 30px;
-  line-height: 1.9;
-  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 2;
+  font-size: 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $sans-serif;
+}
+
+.form-control {
+  border-radius: 0px;
+  box-shadow: none;
 }

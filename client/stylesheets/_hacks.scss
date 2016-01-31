@@ -4,6 +4,9 @@
 .white {
   color: $white;
 }
+.crimson {
+  color: $crimson;
+}
 .margin-bottom-10 {
   margin-bottom: 6px;
 }
@@ -29,6 +32,9 @@
   // font-family: "Raleway";
   font-weight: 700;
 }
+.italic {
+  font-style: italic;
+}
 .pointer {
   cursor: pointer;
 }
@@ -51,13 +57,26 @@
   background-color: $primary;
 }
 .bg-grey {
-  background-color: $bg-grey;
+  background-color: $grey;
 }
 .bg-crimson {
   background-color: $crimson;
 }
 .bg-dark-brown {
-  background-color: $dark_brown;
+  background-color: $dark-brown;
+}
+.bg-light-red {
+  background-color: $light-red;
+}
+.bg-green {
+  background-color: $green;
+}
+.bg-cal-grey {
+  background-color: $cal-grey;
+}
+.outline-crimson {
+  border: 2px solid $crimson;
+  background-color: transparent;
 }
 .lora {
   font-family: "Lora", Georgia, serif;
