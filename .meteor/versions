@@ -1,6 +1,8 @@
 accounts-base@1.2.2
 accounts-password@1.1.4
 aldeed:autoform@5.8.1
+aldeed:collection2@2.3.1
+aldeed:http@0.2.2
 aldeed:simple-schema@1.1.0
 aldeed:template-extension@4.0.0
 anti:fake@0.4.1

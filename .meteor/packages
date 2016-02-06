@@ -35,3 +35,6 @@ service-configuration
 email
 http
 okgrow:router-autoscroll
+aldeed:collection2
+aldeed:simple-schema
+aldeed:http
