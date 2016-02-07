@@ -1,0 +1,76 @@
+<template name="settingsForm">
+{{#autoForm id="settingsForm" schema="Settings.schema"}}
+<div class="row">
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="title"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="siteUrl"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="tagline"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="description"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="siteImage"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="navLayout"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="defaultEmail"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="mailUrl"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="defaultView"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="postsLayout"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="postsView"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="RSSLinksPointTo"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="postsPerPage"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="logoUrl"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="logoHeight"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="logoWidth"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="faviconUrl"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="language"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="backgroundCSS"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="primaryColor"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="secondaryColor"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="fontUrl"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="fontFamily"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="twitterAccount"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="facebookPage"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="googleAnalyticsId"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="mixpanelId"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="footerCode"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="notes"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="authMethods"}}</div>
+</div>
+{{/autoForm}}
+</template>
+
+<template name="settings">
+<div class="page-heading">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1>Settings</h1>
+        <small>Home → Settings</small>
+      </div>
+    </div>
+  </div>
+</div>
+<section class="">
+  <div class="container top-container">
+    <div class="content">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row">
+            <div class="col-sm-12">
+              {{> settingsForm}}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-12">
+          <div class="panel panel-default bg-cal-grey">
+            <div class="panel-body">
+              <h3 class="title">Help</h3>
+              <ul class="list-unstyled">
+                <li><a href="">I forgot my password</a></li>
+                <li><a href="">Question 2</a></li>
+                <li><a href="">Question 3</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</template>
