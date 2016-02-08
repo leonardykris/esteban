@@ -80,7 +80,7 @@
                 <div class="panel-body">
                   <h3 class="title">Application Process</h3>
                   <p>
-                    Candidates can apply to the program through the Center for Asia Leadership website at: <a href="">www.asialeadership.org</a>. Qualified candidates are admitted on a rolling, space-available basis. Applications are due at least four weeks before the program start date. As selection is very competitive, early application is encouraged.
+                    Qualified candidates are admitted on a rolling, space-available basis. Applications are due at least four weeks before the program start date. As selection is very competitive, early application is encouraged.
                   </p>
                   <p>
                     <b>Admissions Criteria and Expectations:</b> Admissions is based on personal and professional achievement. Applicants are also chosen so that the final makeup of the group represents a diversity of nationalities and backgrounds. Selective enrollment is critical to enhance the learning experience. There are no formal educational requirements.
@@ -101,7 +101,7 @@
                 <div class="panel-body">
                   <h3 class="title">Program Fee</h3>
                   <p>
-                    Investment: USD 8,000
+                    Investment: <b>USD 8,000</b>
                   </p>
                   <p>
                     The program fee covers intra-regional flights, accommodations, transportation, and most meals. Payment is due within 30 days of receiving the invoice. If the invoice is received within 30 days of the program start date, payment is due immediately.
@@ -126,9 +126,21 @@
                 <div class="panel-body">
                   <h3 class="title">F.A.Q.</h3>
                   <ul class="list-unstyled">
-                    <li><a href="">Who should attend this?</a></li>
-                    <li><a href="">How many countries will I be visiting?</a></li>
-                    <li><a href="">Download brochure</a></li>
+                    <li>
+                      <a class="showAttendance" href="">Who should attend this?</a>
+                    </li>
+                    <li id="attendance" class="hidden">
+                      <p>Executives aged 26 and above, who are seeking an opportunity to challenge their assumptions and broaden their perspectives through a ‘big-picture to grassroots’ journey of Asia.</p>
+                    </li>
+                    <li>
+                      <a class="showCountries" href="">How many countries will I be visiting?</a>
+                    </li>
+                    <li id="countries" class="hidden">
+                      <p>There are 3 countries that you will be visiting: <b>Tokyo, Taipei and Seoul</b>.</p>
+                    </li>
+                    <li>
+                      <a href="">Download brochure</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -136,7 +148,40 @@
           </div>
           <div class="row">
             <div class="col-sm-12">
-              <a href="/form/general" class="btn btn-lg btn-primary">Apply Now</a>
+              {{#if currentUser}}
+                <a href="/form/general" class="btn btn-lg btn-primary">Apply Now</a>
+              {{else}}
+                <a href="" data-toggle="modal" data-target="#accountConfirmationModal" class="btn btn-lg btn-primary">Apply Now</a>
+              {{/if}}
+              <!-- Account Confirmation Modal -->
+              <div class="modal fade" id="accountConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div id="signUpModal">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Create an Account</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p class="">In order to apply to this program, you'll have to register an account with Center of Asia Leadership to manage and maintain your information. If you already have an existing account with us, please <a href="" id="showSignInModal">sign in here</a> instead. If you have participated in our previous programs prior to 2016, please <a href="/request">request your login access here</a>.</p>
+                        {{> signUpForm}}
+                      </div>
+                      <div class="modal-footer"></div>
+                    </div>
+                    <div id="signInModal" class="hidden">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Sign In</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p class="">Please sign in using the form below. If you don't have an account, please <a href="" id="showSignUpModal">sign up for one here.</a></p>
+                        {{> signInForm}}
+                      </div>
+                      <div class="modal-footer"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="row">

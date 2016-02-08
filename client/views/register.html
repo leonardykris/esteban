@@ -16,35 +16,7 @@
       <div class="col-lg-8">
         <h3 class="title">Notification</h3>
         <p class="">In order to apply to this program, you'll have to register an account with Center of Asia Leadership to manage and maintain your information. If you already have an existing account with us, please <a href="/login">sign in here</a> instead. If you have participated in our previous programs prior to 2016, please <a href="/request">request your login access here</a>.</p>
-        <form name="registerForm">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="johngreen12">
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="e.g. john@green.com">
-          </div>
-          <div class="form-group">
-            <label for="email">First Name</label>
-            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="John">
-          </div>
-          <div class="form-group">
-            <label for="email">Last Name</label>
-            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Green">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-          </div>
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" id="newsletter" name="newsletter"> Subscribe to Center for Asia Leadership newsletter.
-            </label>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-
+        {{> signUpForm}}
       </div>
       <div class="col-lg-4 col-sm-12">
         <div class="panel panel-default bg-cal-grey">
@@ -62,4 +34,36 @@
   </div>
 </div>
 </section>
+</template>
+
+<template name="signUpForm">
+  <form name="registerForm">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="e.g. john@green.com" required>
+    </div>
+    <div class="form-group">
+      <label for="email">First Name</label>
+      <input type="text" class="form-control" id="first_name" name="first_name" placeholder="John" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Last Name</label>
+      <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Green" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="newsletter" name="newsletter" checked> Subscribe to Center for Asia Leadership's newsletter.
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="terms" name="terms" required> I've read and accept Center for Asia Leadership's <a href="">terms and conditions</a> and its <a href="">privacy policy</a>
+      </label>
+    </div>
+    <button type="submit" class="btn btn-default">Sign Up</button>
+  </form>
 </template>

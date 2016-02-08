@@ -15,17 +15,7 @@
     <div class="row">
       <div class="col-lg-8">
         <p class="title">Please sign in using the form below. If you don't have an account, please <a href="/register">sign up for one here.</a></p>
-        <form>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="e.g. john@green.com">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Sign In</button>
-        </form>
+        {{> signInForm}}
 
       </div>
       <div class="col-lg-4 col-sm-12">
@@ -44,4 +34,18 @@
   </div>
 </div>
 </section>
+</template>
+
+<template name="signInForm">
+  <form id="signInForm">
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="e.g. john@green.com">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Sign In</button>
+  </form>
 </template>

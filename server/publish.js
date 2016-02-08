@@ -2,7 +2,7 @@
 Meteor.publish('settings');
 
 // Publish limited user data
-Meteor.publish('userBasicInfo', function(){
+Meteor.publish('userPersonalInfo', function(){
   if (!this.userId) {
     // It has to do something about logging out
     return this.ready();
@@ -13,8 +13,11 @@ Meteor.publish('userBasicInfo', function(){
     fields: {
       // Custom published fields
       // Strictly only allows First Name and Last Name to be read
-      first_name: 1,
-      last_name: 1,
+      "personalInfo": 1,
     }
   });
+});
+
+Meteor.publish(null, function (){
+  return Meteor.roles.find({});
 });

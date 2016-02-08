@@ -1,5 +1,5 @@
 <template name="settingsForm">
-{{#autoForm id="settingsForm" schema="Settings.schema"}}
+{{#autoForm id="settingsForm" collection="Settings" schema="Settings.schema" type="insert"}}
 <div class="row">
   <div class="col-sm-12 col-md-6">{{> afQuickField name="title"}}</div>
   <div class="col-sm-12 col-md-6">{{> afQuickField name="siteUrl"}}</div>
@@ -31,6 +31,9 @@
   <div class="col-sm-12 col-md-6">{{> afQuickField name="footerCode"}}</div>
   <div class="col-sm-12 col-md-6">{{> afQuickField name="notes"}}</div>
   <div class="col-sm-12 col-md-6">{{> afQuickField name="authMethods"}}</div>
+  <div class="col-sm-12">
+    <button type="submit" class="btn btn-default btn-lg btn-primary">Confirm</button>
+  </div>
 </div>
 {{/autoForm}}
 </template>

@@ -14,6 +14,29 @@
   - ifHasRole(role)
   - onlyProps(props)
   - exceptProps(props)
+
+  Checking System:
+  Security.can(userId).insert(doc).for(MyCollection).throw();
+  Security.can(userId).update(id, modifier).for(MyCollection).throw();
+
+  Custom Method:
+  Security.defineMethod('ownsDocument', {
+    fetch: ['ownerId'],
+    deny: function (type, arg, userId, doc) {
+      return userId !== doc.ownerId;
+    }
+  });
+  Posts.permit(['insert', 'update']).ownsDocument().apply();
+
+  Which means:
+  "A user can insert a post from a client if they set themselves as the author"
+  "A user can update a post from a client if they are currently set as the author."
 */
 
-Settings.permit(['insert', 'update', 'remove']).ifLoggedIn().apply();
+// Allow logged in users to update the site settings
+Settings.permit(['insert', 'update']).ifLoggedIn().apply();
+
+// Allow logged in users to update their stored information
+Meteor.users.permit(['update']).ifLoggedIn().apply();
+
+Meteor.roles.permit(['insert', 'update']).apply();

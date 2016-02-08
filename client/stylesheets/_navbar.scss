@@ -17,6 +17,10 @@
       padding: 10px 15px;
       color: $white;
       border-left: solid 1px rgba(255,255,255,.25);
+
+      &:hover {
+        color: $white_50
+      }
     }
     .navbar-nav > li:last-child {
       border-right: solid 1px rgba(255,255,255,.25);

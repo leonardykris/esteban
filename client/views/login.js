@@ -1,4 +1,4 @@
-Template.login.events({
+Template.signInForm.events({
   'submit form': function (event) {
     event.preventDefault();
     var email = $('[name=email]').val();
@@ -15,7 +15,8 @@ Template.login.events({
         alert(error.reason);
       } else {
         // Accounts.onLogin()
-        FlowRouter.go("generalForm");
+        $('#accountConfirmationModal').modal('hide');
+        // FlowRouter.go("generalForm");
       }
     });
   }
