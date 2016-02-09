@@ -1,43 +1,155 @@
+<template name="detailedForm">
+{{#autoForm id="generalForm" collection="Meteor.users" schema="Meteor.users.schema" type="update" doc=userDoc autosave=true}}
+<!-- doc value should not have quotation marks around it because it's not an available String object, not having it means telling Meteor to look for a helper with the same name/identifier-->
+  <h3 class="title">Affiliation</h3>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.first_name"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.last_name"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.prefix"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.common_name"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.gender"}}</div>
+    <!-- By declaring that firstOption is false, it automatically use the next one, or you can also supply a String for it -->
+    <div class="col-sm-12 col-md-2">{{> afQuickField name="personalInfo.dob_date" options=dayOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-2">{{> afQuickField name="personalInfo.dob_month" options=monthOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-2">{{> afQuickField name="personalInfo.dob_year" options=yearOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-3">{{> afQuickField name="personalInfo.country_code" options=countryCodeOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-3">{{> afQuickField name="personalInfo.phone_number" }}</div>
+  </div>
+  <hr>
+  <h3>Home Address</h3>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.country" options=countryOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.state"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.city"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.street"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.zip_code"}}</div>
+  </div>
+  <hr>
+  <h3>Education</h3>
+  <p>Please select the highest level of education attained.</p>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.education_level" options=educationOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.other_education"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.university_name"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.university_year_attended"}}</div>
+    <div class="col-sm-12">{{> afQuickField name="personalInfo.language_proficiency" rows=3}}</div>
+  </div>
+  <p>Note: Proficiency in spoken English is critical for optimum group discussions and engagement in a fast-paced environment. If English is your second language, we require a statement documenting your conversational proficiency.</p>
+  <hr>
+  <h3>Travel Information</h3>
+  <p>If you have more than one passport country, please write the number of the primary passport you will likely be using to travel with us. This number is required for us to book tickets for the program.</p>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.passport_country" options=countryOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.passport_num"}}</div>
+    <div class="col-sm-12 col-md-4">{{> afQuickField name="personalInfo.passport_expiry_date" options=dayOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-4">{{> afQuickField name="personalInfo.passport_expiry_month" options=monthOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-4">{{> afQuickField name="personalInfo.passport_expiry_year" options=passportYearOptions firstOption=false}}</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <button type="submit" class="btn btn-lg btn-primary">Save</button>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <a href="details" class="btn btn-lg btn-secondary">Continue >></a>
+    </div>
+  </div>
+{{/autoForm}}
+</template>
+
 <template name="detailsForm">
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Application Form</h1>
+          <small>Home → Events → Asia Innovation Trek: Exploring Asia’s Silicon Valleys & Education Hubs → Application Form</small>
+        </div>
+      </div>
+    </div>
+  </div>
   <section class="bg-white">
     <div class="container top-container">
       <div class="content">
         <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <h3 class="title">Asia Innovation Trek: Exploring Asia’s Silicon Valleys & Education Hubs</h3>
+            <p class="">March 12 - 20, 2016 — <b>Tokyo - Taipei - Seoul</b></p>
+            <p class="">In order to process your application, we ask you to provide the following information. Please note that all fields marked with an asterisk (*) are required.</p>
+            <p>This form has an autosave function where every time changes are made, it's instantly saved to avoid losses of information.</p>
+          </div>
           <div class="col-sm-12 col-md-8">
-            <h3 class="title">Notification</h3>
-            <p class="">In order to apply to this program, you'll have to register an account with Center of Asia Leadership to manage and maintain your information. If you already have an existing account with us, please <a href="/login">sign in here</a> instead. If you have participated in our previous programs prior to 2016, please <a href="/request">request your login access here</a>.</p>
-            <form name="registerForm">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="johngreen12">
+            {{> detailedForm}}
+            <form>
+              <h3>Affiliation (School/Organization/Company)</h3>
+              <div class="row">
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group">
+                  <label for="">Affiliation Name*</label>
+                  <input type="text" class="form-control" id="aff_name" name="aff_name" placeholder="Organization Name"></div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group">
+                  <label for="">Affiliated Email</label>
+                  <input type="text" class="form-control" id="aff_email" name="aff_email" placeholder="e.g. yourname@organization.com"></div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group">
+                  <label for="">Country</label>
+                  <input type="text" class="form-control" id="aff_country" name="aff_country" placeholder="Country"></div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group">
+                  <label for="">State</label>
+                  <input type="text" class="form-control" id="aff_state" name="aff_state" placeholder="State"></div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group">
+                  <label for="">City</label>
+                  <input type="text" class="form-control" id="aff_city" name="aff_city" placeholder="City"></div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group">
+                  <label for="">Street</label>
+                  <input type="text" class="form-control" id="aff_street" name="aff_street" placeholder="Street"></div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group">
+                  <label for="">Zip Code</label>
+                  <input type="text" class="form-control" id="aff_zipcode" name="aff_zipcode" placeholder="Zip Code"></div>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-group">
+                  <label for="">Website</label>
+                  <input type="text" class="form-control" id="aff_website" name="aff_website" placeholder="Organization Website"></div>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="e.g. john@green.com">
+              <hr> -->
+              <!-- <hr> -->
+              <h3>Feedback</h3>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" value="">Direct mail package
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group"><label for=""></label><input type="text" class="form-control" id="" name="" placeholder=""></div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group"><label for=""></label><input type="text" class="form-control" id="" name="" placeholder=""></div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group"><label for=""></label><input type="text" class="form-control" id="" name="" placeholder=""></div>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="email">First Name</label>
-                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="John">
-              </div>
-              <div class="form-group">
-                <label for="email">Last Name</label>
-                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Green">
-              </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox" id="newsletter" name="newsletter"> Subscribe to Center for Asia Leadership newsletter.
-                </label>
-              </div>
-              <button type="submit" class="btn btn-default">Sign Up</button>
             </form>
+              <!-- .col-sm-12.col-md-6>.form-group>label[for=""]+input[type="text"].form-control[id="" name="" placeholder=""] -->
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </template>

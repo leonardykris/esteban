@@ -8,11 +8,52 @@
     <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.prefix"}}</div>
     <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.common_name"}}</div>
     <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.gender"}}</div>
-    <div class="col-sm-12 col-md-2">{{> afQuickField name="personalInfo.dob_date" options=dayOptions}}</div>
-    <div class="col-sm-12 col-md-2">{{> afQuickField name="personalInfo.dob_month" options=monthOptions}}</div>
-    <div class="col-sm-12 col-md-2">{{> afQuickField name="personalInfo.dob_year" options=yearOptions}}</div>
+    <!-- By declaring that firstOption is false, it automatically use the next one, or you can also supply a String for it -->
+    <div class="col-sm-12 col-md-2">{{> afQuickField name="personalInfo.dob_date" options=dayOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-2">{{> afQuickField name="personalInfo.dob_month" options=monthOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-2">{{> afQuickField name="personalInfo.dob_year" options=yearOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-3">{{> afQuickField name="personalInfo.country_code" options=countryCodeOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-3">{{> afQuickField name="personalInfo.phone_number" }}</div>
   </div>
-  <button type="submit" class="btn btn-default">Update Info</button>
+  <hr>
+  <h3>Home Address</h3>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.country" options=countryOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.state"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.city"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.street"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.zip_code"}}</div>
+  </div>
+  <hr>
+  <h3>Education</h3>
+  <p>Please select the highest level of education attained.</p>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.education_level" options=educationOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.other_education"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.university_name"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.university_year_attended"}}</div>
+    <div class="col-sm-12">{{> afQuickField name="personalInfo.language_proficiency" rows=3}}</div>
+  </div>
+  <p>Note: Proficiency in spoken English is critical for optimum group discussions and engagement in a fast-paced environment. If English is your second language, we require a statement documenting your conversational proficiency.</p>
+  <hr>
+  <h3>Travel Information</h3>
+  <p>If you have more than one passport country, please write the number of the primary passport you will likely be using to travel with us. This number is required for us to book tickets for the program.</p>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.passport_country" options=countryOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.passport_num"}}</div>
+    <div class="col-sm-12 col-md-4">{{> afQuickField name="personalInfo.passport_expiry_date" options=dayOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-4">{{> afQuickField name="personalInfo.passport_expiry_month" options=monthOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-4">{{> afQuickField name="personalInfo.passport_expiry_year" options=passportYearOptions firstOption=false}}</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <button type="submit" class="btn btn-lg btn-primary">Save</button>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <a href="details" class="btn btn-lg btn-secondary">Continue >></a>
+    </div>
+  </div>
 {{/autoForm}}
 </template>
 
@@ -24,7 +65,6 @@
           <h1>Application Form</h1>
           <small>Home → Events → Asia Innovation Trek: Exploring Asia’s Silicon Valleys & Education Hubs → Application Form</small>
         </div>
-        <!-- <div class="col-md-4" style="border-left: 1px solid #666; border-right: 1px solid #666; "> -->
       </div>
     </div>
   </div>
@@ -36,122 +76,10 @@
             <h3 class="title">Asia Innovation Trek: Exploring Asia’s Silicon Valleys & Education Hubs</h3>
             <p class="">March 12 - 20, 2016 — <b>Tokyo - Taipei - Seoul</b></p>
             <p class="">In order to process your application, we ask you to provide the following information. Please note that all fields marked with an asterisk (*) are required.</p>
+            <p>This form has an autosave function where every time changes are made, it's instantly saved to avoid losses of information.</p>
           </div>
           <div class="col-sm-12 col-md-8">
             {{> personalDetailForm}}
-            <form name="registerForm">
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                    <label for="dob">Date of Birth*</label>
-                    <input type="date" class="form-control" id="dob" name="dob" placeholder="">
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="phone_number">Phone Number* <small class="">(include area code, e.g. +60)</small></label>
-                  <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="Area Code + Number"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                    <label for="email">Primary Email Address*</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="e.g. john@green.com" value="{{currentUser.emails.[0].address}}">
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <h3>Education</h3>
-              <p>Please select the highest level of education attained.</p>
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                    <label for="gender">Education*</label>
-                    <select class="form-control" id="gender" name="gender">
-                      <option>PhD</option>
-                      <option>MBA</option>
-                      <option>MD</option>
-                      <option>MS/MA</option>
-                      <option>BS/BA</option>
-                      <option>JD/Law</option>
-                      <option>Two-Year College</option>
-                      <option>High School</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="other"><small>If you selected "Other", please specify here</small></label>
-                  <input type="text" class="form-control" id="other" name="other" placeholder="Other Kind of Certifications/Institutions"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="university">University</label>
-                  <input type="text" class="form-control" id="university" name="university" placeholder="University Name"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="year_entered">Year Entered</label>
-                  <input type="text" class="form-control" id="year_entered" name="year_entered" placeholder="Year Entered"></div>
-                </div>
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <label for="language">Language Proficiency</label>
-                    <textarea rows="3" wrap="soft" name="language" placeholder="You may include proof such as enrolment in an English-language program and/or a TOEFL exam result. The Admissions Committee may request documents and/or require an interview."></textarea>
-                  </div>
-                </div>
-              </div>
-              <p>Note: Proficiency in spoken English is critical for optimum group discussions and engagement in a fast-paced environment. If English is your second language, we require a statement documenting your conversational proficiency.</p>
-              <hr>
-              <h3>Travel Information</h3>
-              <p>If you have more than one passport country, please write the number of the primary passport you will likely be using to travel with us. This number is required for us to book tickets for the program.</p>
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Passport Issuing Country*</label>
-                  <input type="text" class="form-control" id="passport_country" name="passport_country" placeholder="Country"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Passport Number*</label>
-                  <input type="text" class="form-control" id="passport_num" name="passport_num" placeholder="Passport Number"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Passport Expiry Date*</label>
-                  <input type="date" class="form-control" id="passport_expiry_date" name="passport_expiry_date" placeholder=""></div>
-                </div>
-              </div>
-              <hr>
-              <h3>Home Address</h3>
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Country*</label>
-                  <input type="text" class="form-control" id="country" name="country" placeholder="Country"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">State*</label>
-                  <input type="text" class="form-control" id="state" name="state" placeholder="State"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">City*</label>
-                  <input type="text" class="form-control" id="city" name="city" placeholder="City"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Street*</label>
-                  <input type="text" class="form-control" id="street" name="street" placeholder="Street"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Zip Code*</label>
-                  <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Zip Code"></div>
-                </div>
-              </div>
-              <hr>
               <!-- <h3>Affiliation (School/Organization/Company)</h3>
               <div class="row">
                 <div class="col-sm-12 col-md-6">
@@ -196,14 +124,6 @@
                 </div>
               </div>
               <hr> -->
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <a href="" class="btn btn-lg btn-primary">Save</a>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <a href="" class="btn btn-lg btn-secondary">Continue >></a>
-                </div>
-              </div>
               <!-- <hr> -->
               <!-- <h3>Feedback</h3>
               <div class="row">
@@ -225,10 +145,6 @@
                 </div>
               </div> -->
               <!-- .col-sm-12.col-md-6>.form-group>label[for=""]+input[type="text"].form-control[id="" name="" placeholder=""] -->
-
-
-              <!-- <button type="submit" class="btn btn-default">Sign Up</button> -->
-            </form>
           </div>
         </div>
       </div>

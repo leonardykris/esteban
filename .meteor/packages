@@ -40,3 +40,5 @@ aldeed:simple-schema
 aldeed:http
 ongoworks:security
 alanning:roles
+accounts-facebook
+accounts-weibo

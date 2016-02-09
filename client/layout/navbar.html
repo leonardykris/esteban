@@ -3,13 +3,13 @@
     <div class="container">
       <div class="top-menu">
         <ul class="nav navbar-nav hidden-xs navbar-right">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="about">Resources</a></li>
-          <li><a href="login">CALI Press</a></li>
-          <li><a href="login">Contact Us</a></li>
+          <li><a href="http://asialeadership.org/about-us/">About Us</a></li>
+          <li><a href="http://asialeadership.org/careers/">Careers</a></li>
+          <li><a href="http://asialeadership.org/resources/">Resources</a></li>
+          <li><a href="http://asialeadership.org/cali-press/">CALI Press</a></li>
+          <li><a href="http://asialeadership.org/contact-us/">Contact Us</a></li>
           {{#if currentUser}}
-            <li><a href="profile" class="">Welcome, {{currentUser.personalInfo.first_name}}</a></li>
+            <li><a href="/profile" class="">Welcome, {{currentUser.personalInfo.first_name}}</a></li>
             <li><a href="" class="logout">Sign Out</a></li>
           {{else}}
             <li><a href="login">Sign In</a></li>
@@ -29,24 +29,15 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/">
-          <!-- <i class="fa fa-globe"></i> -->
           The Esteban Project
         </a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <!-- <ul class="nav navbar-nav">
-          <li><a href="#" class="alt">#English <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">#Bahasa</a></li>
-          <li><a href="#">#中文</a></li>
-          <li><a href="#">#ภาษาไทย</a></li>
-          <li><a href="#">#ភាសាខ្មែរ</a></li>
-          <li><a href="#">#Tiếng Việtរ</a></li>
-        </ul> -->
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Upcoming Programs</a></li>
-          <li><a href="#">Asia Leadership Trek</a></li>
-          <li><a href="about">Asia Leadership Institute</a></li>
-          <li><a href="login">Acumen Case Center</a></li>
+          <li><a href="http://asialeadership.org/upcoming-programs/">Upcoming Programs</a></li>
+          <li><a href="http://asialeadership.org/asia-leadership-trek/">Asia Leadership Trek</a></li>
+          <li><a href="http://asialeadership.org/asia-leadership-institute/">Asia Leadership Institute</a></li>
+          <li><a href="http://asialeadership.org/acumen-case-center/">Acumen Case Center</a></li>
           <!-- <li>{{> loginButtons}}</li> -->
           <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quick Links<span class="caret"></span></a>
