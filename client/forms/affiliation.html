@@ -1,0 +1,59 @@
+<template name="affiliationForm">
+{{#autoForm id="affiliationForm" collection="Meteor.users" schema="Meteor.users.schema" type="update" doc=userDoc autosave=true}}
+  <h3 class="title">Affiliation</h3>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_name"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_website"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_email"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_country" options=countryOptions firstOption=false}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_state"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_city"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_street"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_zip_code"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_industry"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_other_industry"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_position"}}</div>
+    <div class="col-sm-12 col-md-6">{{> afQuickField name="affiliation.aff_other_position"}}</div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <button type="submit" class="btn btn-lg btn-primary">Save</button>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <a href="application" class="btn btn-lg btn-secondary">Continue >></a>
+    </div>
+  </div>
+{{/autoForm}}
+</template>
+
+<template name="affiliation">
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Application Form</h1>
+          <small>Home → Events → Asia Innovation Trek: Exploring Asia’s Silicon Valleys & Education Hubs → Application Form</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="bg-white">
+    <div class="container top-container">
+      <div class="content">
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <h3 class="title">Asia Innovation Trek: Exploring Asia’s Silicon Valleys & Education Hubs</h3>
+            <p class="">March 12 - 20, 2016 — <b>Tokyo - Taipei - Seoul</b></p>
+            <p class="">In order to process your application, we ask you to provide the following information. Please note that all fields marked with an asterisk (*) are required.</p>
+            <p>This form has an autosave function where every time changes are made, it's instantly saved to avoid losses of information.</p>
+          </div>
+          <div class="col-sm-12 col-md-8">
+            {{> affiliationForm}}
+              <!-- .col-sm-12.col-md-6>.form-group>label[for=""]+input[type="text"].form-control[id="" name="" placeholder=""] -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>

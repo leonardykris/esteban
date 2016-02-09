@@ -1,7 +1,7 @@
-<template name="detailedForm">
-{{#autoForm id="generalForm" collection="Meteor.users" schema="Meteor.users.schema" type="update" doc=userDoc autosave=true}}
+<template name="personalInfoForm">
+{{#autoForm id="personalInfoForm" collection="Meteor.users" schema="Meteor.users.schema" type="update" doc=userDoc autosave=true}}
 <!-- doc value should not have quotation marks around it because it's not an available String object, not having it means telling Meteor to look for a helper with the same name/identifier-->
-  <h3 class="title">Affiliation</h3>
+  <h3 class="title">Personal Details</h3>
   <div class="row">
     <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.first_name"}}</div>
     <div class="col-sm-12 col-md-6">{{> afQuickField name="personalInfo.last_name"}}</div>
@@ -51,13 +51,13 @@
       <button type="submit" class="btn btn-lg btn-primary">Save</button>
     </div>
     <div class="col-sm-12 col-md-6">
-      <a href="details" class="btn btn-lg btn-secondary">Continue >></a>
+      <a href="affiliation" class="btn btn-lg btn-secondary">Continue >></a>
     </div>
   </div>
 {{/autoForm}}
 </template>
 
-<template name="detailsForm">
+<template name="personalInfo">
   <div class="page-heading">
     <div class="container">
       <div class="row">
@@ -79,74 +79,7 @@
             <p>This form has an autosave function where every time changes are made, it's instantly saved to avoid losses of information.</p>
           </div>
           <div class="col-sm-12 col-md-8">
-            {{> detailedForm}}
-            <form>
-              <h3>Affiliation (School/Organization/Company)</h3>
-              <div class="row">
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Affiliation Name*</label>
-                  <input type="text" class="form-control" id="aff_name" name="aff_name" placeholder="Organization Name"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Affiliated Email</label>
-                  <input type="text" class="form-control" id="aff_email" name="aff_email" placeholder="e.g. yourname@organization.com"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Country</label>
-                  <input type="text" class="form-control" id="aff_country" name="aff_country" placeholder="Country"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">State</label>
-                  <input type="text" class="form-control" id="aff_state" name="aff_state" placeholder="State"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">City</label>
-                  <input type="text" class="form-control" id="aff_city" name="aff_city" placeholder="City"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Street</label>
-                  <input type="text" class="form-control" id="aff_street" name="aff_street" placeholder="Street"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Zip Code</label>
-                  <input type="text" class="form-control" id="aff_zipcode" name="aff_zipcode" placeholder="Zip Code"></div>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <div class="form-group">
-                  <label for="">Website</label>
-                  <input type="text" class="form-control" id="aff_website" name="aff_website" placeholder="Organization Website"></div>
-                </div>
-              </div>
-              <hr> -->
-              <!-- <hr> -->
-              <h3>Feedback</h3>
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" value="">Direct mail package
-                    </label>
-                  </div>
-                </div>
-                <div class="col-sm-12">
-                  <div class="form-group"><label for=""></label><input type="text" class="form-control" id="" name="" placeholder=""></div>
-                </div>
-                <div class="col-sm-12">
-                  <div class="form-group"><label for=""></label><input type="text" class="form-control" id="" name="" placeholder=""></div>
-                </div>
-                <div class="col-sm-12">
-                  <div class="form-group"><label for=""></label><input type="text" class="form-control" id="" name="" placeholder=""></div>
-                </div>
-              </div>
-            </form>
-              <!-- .col-sm-12.col-md-6>.form-group>label[for=""]+input[type="text"].form-control[id="" name="" placeholder=""] -->
+            {{> personalInfoForm}}
           </div>
         </div>
       </div>

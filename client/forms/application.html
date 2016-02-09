@@ -1,0 +1,39 @@
+<template name="applicationForm">
+{{#autoForm id="applicationForm" collection="Meteor.users" schema="Meteor.users.schema" type="update" doc=userDoc autosave=true}}
+  <h3 class="title">Affiliation</h3>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.program_id"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.discoverable"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.discoverable_other"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.apply_factor"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.apply_factor_other"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.preferred_mail_address"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.leadership_roles"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.prof_exp_years"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.aff_description"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.expectations"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.valuable_skills"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.ted_talks"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.destination_group"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.biography_points"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.biography_sentence"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.ack_payment"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.ack_productive"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.ack_behaviour"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.ack_comments"}}</div>
+  <div class="col-sm-12 col-md-6">{{> afQuickField name="application.ack_self"}}</div>
+{{/autoForm}}
+</template>
+<template name="programForm">
+<section class="bg-white">
+  <div class="container top-container">
+    <div class="content">
+      <div class="row">
+        <div class="col-sm-12 col-md-offset-4 col-md-8">
+
+          {{> affiliationForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</template>

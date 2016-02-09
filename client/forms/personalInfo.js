@@ -1,4 +1,4 @@
-Template.personalDetailForm.helpers({
+Template.personalInfoForm.helpers({
   userDoc: function () {
     return Meteor.user();
   },
