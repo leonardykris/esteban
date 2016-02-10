@@ -1,3 +1,9 @@
+Template.affiliationForm.events({
+  'click #startApplication': function () {
+
+  }
+});
+
 Template.affiliationForm.helpers({
   userDoc: function () {
     return Meteor.user();

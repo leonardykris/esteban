@@ -1,4 +1,6 @@
 Accounts.onCreateUser(function (options, user) {
+  // Oh by doing this you won't add the profile property to the user anymore
+  // That property is published by default to the client, which is one of the reason you don't want to put anything inside there like isAdmin property
   if (options.first_name && options.last_name && options.terms || options.newsletter) {
     user.personalInfo = {
       first_name: options.first_name,

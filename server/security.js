@@ -40,3 +40,5 @@ Settings.permit(['insert', 'update']).ifLoggedIn().apply();
 Meteor.users.permit(['update']).ifLoggedIn().apply();
 
 Meteor.roles.permit(['insert', 'update']).apply();
+
+Applications.permit(['insert', 'update']).ifLoggedIn().apply();

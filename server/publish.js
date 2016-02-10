@@ -21,3 +21,16 @@ Meteor.publish('userPersonalInfo', function(){
 Meteor.publish(null, function (){
   return Meteor.roles.find({});
 });
+
+Meteor.publish('applications', function(){
+  return Applications.find({"user_id": this.userId}, {
+    // Supressed fields
+    "isCanceled": 0,
+    "isAccepted": 0,
+    "hasInterviewed": 0,
+    "hasPaid": 0,
+  });
+});
+Meteor.publish('programs', function() {
+  return Programs.find();
+});
